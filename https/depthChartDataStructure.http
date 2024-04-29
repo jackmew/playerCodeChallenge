@@ -1,0 +1,20 @@
+### POST: Add a player to the depth chart for NFL at Wide Receiver position
+POST http://localhost:8080/api/depth-chart-data-structure/NFL/WR/add?playerId=4&playerName=New%20Player&depth=1
+Content-Type: application/json
+
+### DELETE: Remove a player from the depth chart for NFL at Wide Receiver position
+DELETE http://localhost:8080/api/depth-chart-data-structure/NFL/WR/remove?playerId=2
+Content-Type: application/json
+
+### GET: Retrieve the full depth chart for NFL
+GET http://localhost:8080/api/depth-chart-data-structure/NFL
+Content-Type: application/json
+
+### GET: Retrieve players by position in NFL for Wide Receivers (WR)
+GET http://localhost:8080/api/depth-chart-data-structure/NFL/WR
+Content-Type: application/json
+
+### GET: Retrieve players under a specific player in the WR position for NFL
+# Replace `2` with the actual ID of the player you want to query under.
+GET http://localhost:8080/api/depth-chart-data-structure/NFL/WR/under?playerId=2
+Content-Type: application/json

@@ -1,0 +1,29 @@
+### POST: Create a new player
+POST http://localhost:8080/api/players
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}
+
+### GET: Retrieve all players
+GET http://localhost:8080/api/players
+
+### GET: Retrieve a player by ID
+# You need to replace `1` with the actual ID of the user you want to retrieve.
+GET http://localhost:8080/api/players/1
+
+### PUT: Update a player
+# You need to replace `1` with the actual ID of the user you want to update.
+PUT http://localhost:8080/api/players/1
+Content-Type: application/json
+
+{
+  "name": "John Updated",
+  "email": "john.updated@example.com"
+}
+
+### DELETE: Delete a player
+# You need to replace `1` with the actual ID of the user you want to delete.
+DELETE http://localhost:8080/api/players/1

@@ -1,0 +1,15 @@
+spring:
+  datasource:
+#    in-memory - volatile
+    url: jdbc:h2:mem:testdb
+#    url: jdbc:h2:file:/testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
