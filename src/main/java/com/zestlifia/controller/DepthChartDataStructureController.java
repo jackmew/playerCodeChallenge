@@ -1,10 +1,14 @@
 package com.zestlifia.controller;
 
+import com.zestlifia.enums.NFLPosition;
+import com.zestlifia.enums.SoccerPosition;
+import com.zestlifia.enums.Sport;
 import com.zestlifia.testdatastructure.DepthChartDataStructure;
 import com.zestlifia.testdatastructure.PlayerModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -20,13 +24,15 @@ public class DepthChartDataStructureController {
 
     @PostMapping("/{sport}/{position}/add")
     public ResponseEntity<String> addPlayerToDepthChart(
-            @PathVariable String sport,
+            @PathVariable Sport sport,
             @PathVariable String position,
             @RequestParam int playerId,
             @RequestParam String playerName,
             @RequestParam(required = false) Integer depth) {
+
         PlayerModel player = new PlayerModel(playerId, playerName);
-        depthChart.addPlayerToDepthChart(player, sport, position, depth);
+        depthChart.addPlayerToDepthChart(player, sport.name(), position, depth);
+
         return ResponseEntity.ok("Player added successfully");
     }
 
